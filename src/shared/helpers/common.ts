@@ -7,3 +7,7 @@ export const getRandomItems = <T>(items: T[]):T[] => {
 };
 
 export const getRandomItem = <T>(items: T[]):T => items[generateRandomValue(0, items.length - 1)];
+
+export const getRandomBool = () => Math.random() > 0.5;
+
+export const getErrorMessage = (error: unknown): string => error instanceof Error ? error.message : '';
