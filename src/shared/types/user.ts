@@ -1,6 +1,11 @@
+export enum UserType {
+  DEFAULT= 'default',
+  PRO = 'pro'
+}
+
 export type User = {
+  name: string;
   email: string;
-  avatarPath: string;
-  firstname: string;
-  lastname: string;
+  avatar: string;
+  type: UserType
 }
