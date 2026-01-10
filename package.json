@@ -18,7 +18,7 @@
     "clean": "rimraf dist",
     "ts": "ts-node",
     "json-server": "json-server --watch ./src/mocks/mock-server-data.json --port 3000",
-    "docker-db-run": "docker compose --file ./docker-compose.dev.yml --env-file ./.env --project-name buy-and-sell up"
+    "docker-db-run": "docker compose --file ./docker-compose.dev.yml --env-file ./.env --project-name six-cities up"
   },
   "devDependencies": {
     "@types/node": "24.1.0",

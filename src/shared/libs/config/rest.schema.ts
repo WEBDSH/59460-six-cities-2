@@ -8,6 +8,7 @@ export const configRestSchema = z.object({
   DB_PASSWORD: z.string(),
   DB_PORT: z.string().default('27017'),
   DB_NAME: z.string(),
+  DEFAULT_USER_PASSWORD: z.string(),
 });
 
 export type RestSchema = z.infer<typeof configRestSchema>;
