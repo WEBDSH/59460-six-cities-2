@@ -1,4 +1,5 @@
 import {User} from './user.js';
+import {Coordinates} from './coordinates.js';
 
 export enum OfferType {
   APARTMENT = 'apartment',
@@ -30,7 +31,7 @@ export type Offer = {
   type: OfferType
   rooms: number
   guests: number
-  author: User;
-  coordinates: { lat: number, lng: number}
+  user: User;
+  coordinates: Coordinates
   price: number;
 }

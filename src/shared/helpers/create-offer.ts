@@ -38,7 +38,7 @@ export const createOffer = (offerData: string): Offer => {
     rooms: Number.parseInt(rooms, 10),
     guests: Number.parseInt(guests, 10),
     price: Number.parseInt(price, 10),
-    author: {
+    user: {
       name,
       email,
       avatar,
