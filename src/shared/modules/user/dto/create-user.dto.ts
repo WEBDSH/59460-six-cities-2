@@ -1,4 +1,4 @@
-import {UserType} from '../../../types/index.js';
+import {UserType} from '../../../types/index.ts';
 
 export class CreateUserDto {
   public email: string;

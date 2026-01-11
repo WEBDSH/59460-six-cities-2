@@ -1,4 +1,4 @@
-import {City, Coordinates, OfferType} from '../../../types/index.js';
+import {City, Coordinates, OfferType} from '../../../types/index.ts';
 
 export type CreateOfferDto = {
   title: string;

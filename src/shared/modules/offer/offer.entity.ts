@@ -1,6 +1,14 @@
-import {City, Coordinates, OfferType} from '../../types/index.js';
+import {City, OfferType} from '../../types/index.ts';
 import {defaultClasses, getModelForClass, modelOptions, prop, Ref} from '@typegoose/typegoose';
-import {UserEntity} from '../user/index.js';
+import {UserEntity} from '../user/index.ts';
+
+export class Coordinates {
+  @prop({ required: true, type: () => Number })
+  public lat: number;
+
+  @prop({ required: true, type: () => Number })
+  public lng: number;
+}
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export interface OfferEntity extends defaultClasses.Base {}
@@ -13,13 +21,13 @@ export interface OfferEntity extends defaultClasses.Base {}
 })
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export class OfferEntity extends defaultClasses.TimeStamps {
-  @prop({ required: true, trim: true, default: '' })
+  @prop({ required: true, trim: true, default: '', type: () => String })
   public title: string;
 
-  @prop({ required: true, trim: true, default: '' })
+  @prop({ required: true, trim: true, default: '', type: () => String })
   public description: string;
 
-  @prop({ required: true, default: Date.now })
+  @prop({ required: true, default: Date.now, type: () => Date })
   public postDate: Date;
 
   @prop({
@@ -29,19 +37,19 @@ export class OfferEntity extends defaultClasses.TimeStamps {
   })
   public city: City;
 
-  @prop({ required: true, default: '' })
+  @prop({ required: true, default: '', type: () => String })
   public preview: string;
 
   @prop({ required: true, type: () => [String], default: [] })
   public images: string[];
 
-  @prop({ required: true, default: false })
+  @prop({ required: true, default: false, type: () => Boolean })
   public isPremium: boolean;
 
-  @prop({ required: true, default: false })
+  @prop({ required: true, default: false, type: () => Boolean })
   public isFavorite: boolean;
 
-  @prop({ required: true, default: 0 })
+  @prop({ required: true, default: 0, type: () => Number })
   public rating: number;
 
   @prop({
@@ -52,13 +60,13 @@ export class OfferEntity extends defaultClasses.TimeStamps {
   })
   public type: OfferType;
 
-  @prop({ required: true, default: 1 })
+  @prop({ required: true, default: 1, type: () => Number })
   public rooms: number;
 
-  @prop({ required: true, default: 1 })
+  @prop({ required: true, default: 1, type: () => Number })
   public guests: number;
 
-  @prop({ required: true, default: 100 })
+  @prop({ required: true, default: 100, type: () => Number })
   public price: number;
 
   @prop({
@@ -67,7 +75,11 @@ export class OfferEntity extends defaultClasses.TimeStamps {
   })
   public userId: Ref<UserEntity>;
 
-  @prop({ required: true, default: { lat: 0, lng: 0} })
+  @prop({
+    required: true,
+    _id: false,
+    type: () => Coordinates
+  })
   public coordinates: Coordinates;
 }
 

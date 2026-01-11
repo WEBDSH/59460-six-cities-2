@@ -1,5 +1,5 @@
 import { Logger as PinoInstance, pino, transport } from 'pino';
-import { Logger } from './logger.interface.js';
+import { Logger } from './logger.interface.ts';
 import { injectable } from 'inversify';
 import {resolve} from 'node:path';
 

@@ -1,5 +1,5 @@
-import {User} from './user.js';
-import {Coordinates} from './coordinates.js';
+import {User} from './user.ts';
+import {Coordinates} from './coordinates.ts';
 
 export enum OfferType {
   APARTMENT = 'apartment',

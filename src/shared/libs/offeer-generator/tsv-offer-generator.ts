@@ -1,6 +1,6 @@
-import {OfferGenerator} from './offer-generator.interface.js';
-import {MockServerData} from '../../types/index.js';
-import {generateRandomValue, getRandomBool, getRandomItem, getRandomItems} from '../../helpers/index.js';
+import {OfferGenerator} from './offer-generator.interface.ts';
+import {MockServerData} from '../../types/index.ts';
+import {generateRandomValue, getRandomBool, getRandomItem, getRandomItems} from '../../helpers/index.ts';
 import dayjs from 'dayjs';
 
 const FIRST_WEEK_DAY = 1;

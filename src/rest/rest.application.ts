@@ -1,9 +1,9 @@
-import {Logger} from '../shared/libs/logger/index.js';
+import {Logger} from '../shared/libs/logger/index.ts';
 import { inject, injectable } from 'inversify';
-import {Config, RestSchema} from '../shared/libs/config/index.js';
-import {Component} from '../shared/types/index.js';
-import {DatabaseClient} from '../shared/libs/database-client/index.js';
-import {getMongoURI} from '../shared/helpers/index.js';
+import {Config, RestSchema} from '../shared/libs/config/index.ts';
+import {Component} from '../shared/types/index.ts';
+import {DatabaseClient} from '../shared/libs/database-client/index.ts';
+import {getMongoURI} from '../shared/helpers/index.ts';
 
 
 @injectable()

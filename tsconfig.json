@@ -21,6 +21,8 @@
     "outDir": "./dist",
     "emitDecoratorMetadata": true,
     "strictPropertyInitialization": false,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "types": [
       "node",
     ],

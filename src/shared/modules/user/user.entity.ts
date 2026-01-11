@@ -1,6 +1,6 @@
-import {User, UserType} from '../../types/index.js';
+import {User, UserType} from '../../types/index.ts';
 import {defaultClasses, getModelForClass, modelOptions, prop} from '@typegoose/typegoose';
-import {createSHA256} from '../../helpers/index.js';
+import {createSHA256} from '../../helpers/index.ts';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export interface UserEntity extends defaultClasses.Base {}
@@ -13,13 +13,13 @@ export interface UserEntity extends defaultClasses.Base {}
 })
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging
 export class UserEntity extends defaultClasses.TimeStamps implements User {
-  @prop({ required: true, default: '' })
+  @prop({ required: true, default: '', type: () => String })
   public name: string;
 
-  @prop({ unique: true, required: true, default: '' })
+  @prop({ unique: true, required: true, default: '', type: () => String })
   public email: string;
 
-  @prop({ required: false, default: '' })
+  @prop({ required: false, default: '', type: () => String })
   public avatar: string;
 
   @prop({
@@ -30,7 +30,7 @@ export class UserEntity extends defaultClasses.TimeStamps implements User {
   })
   public type: UserType;
 
-  @prop({ required: true, default: '' })
+  @prop({ required: true, default: '', type: () => String })
   private password?: string;
 
   constructor(userData: User) {
@@ -42,7 +42,7 @@ export class UserEntity extends defaultClasses.TimeStamps implements User {
     this.type = userData.type;
   }
 
-  public setPassword(password: string, salt: string) {
+  public setPassword(password: string, salt: string,) {
     this.password = createSHA256(password, salt);
   }
 

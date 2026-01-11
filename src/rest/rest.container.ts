@@ -1,9 +1,9 @@
 import { ContainerModule } from 'inversify';
-import { RestApplication } from './rest.application.js';
-import { Component } from '../shared/types/index.js';
-import { Logger, PinoLogger } from '../shared/libs/logger/index.js';
-import { Config, RestConfig, RestSchema } from '../shared/libs/config/index.js';
-import { DatabaseClient, MongoDatabaseClient } from '../shared/libs/database-client/index.js';
+import { RestApplication } from './rest.application.ts';
+import { Component } from '../shared/types/index.ts';
+import { Logger, PinoLogger } from '../shared/libs/logger/index.ts';
+import { Config, RestConfig, RestSchema } from '../shared/libs/config/index.ts';
+import { DatabaseClient, MongoDatabaseClient } from '../shared/libs/database-client/index.ts';
 
 export const createRestApplicationContainer = () => new ContainerModule(({ bind }) => {
   bind<RestApplication>(Component.RestApplication).to(RestApplication).inSingletonScope();

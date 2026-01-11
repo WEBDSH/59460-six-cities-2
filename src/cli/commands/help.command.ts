@@ -1,4 +1,4 @@
-import type { Command } from './command.interface.js';
+import type { Command } from './command.interface.ts';
 import chalk from 'chalk';
 
 export class HelpCommand implements Command {

@@ -1,6 +1,6 @@
-export * from './user.js';
-export * from './offer.js';
-export * from './mock-server-data.js';
-export * from './component.enum.js';
-export * from './coordinates.js';
+export * from './user.ts';
+export * from './offer.ts';
+export * from './mock-server-data.ts';
+export * from './component.enum.ts';
+export * from './coordinates.ts';
 

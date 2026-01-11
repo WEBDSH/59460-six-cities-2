@@ -1,4 +1,4 @@
-import { City } from './offer.js';
+import { City } from './offer.ts';
 
 export type MockCity = {
   name: City;

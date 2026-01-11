@@ -1,12 +1,12 @@
-import type { Command } from './command.interface.js';
-import { TsvFileReader } from '../../shared/libs/file-reader/index.js';
-import {getErrorMessage, createOffer, getMongoURI} from '../../shared/helpers/index.js';
-import {DEFAULT_DB_PORT, DEFAULT_USER_PASSWORD} from './command.constant.js';
-import {DefaultUserService, UserModel, UserService} from '../../shared/modules/user/index.js';
-import {DefaultOfferService, OfferModel, OfferService} from '../../shared/modules/offer/index.js';
-import {DatabaseClient, MongoDatabaseClient} from '../../shared/libs/database-client/index.js';
-import {ConsoleLogger, Logger} from '../../shared/libs/logger/index.js';
-import {Offer} from '../../shared/types/index.js';
+import type { Command } from './command.interface.ts';
+import { TsvFileReader } from '../../shared/libs/file-reader/index.ts';
+import {getErrorMessage, createOffer, getMongoURI} from '../../shared/helpers/index.ts';
+import {DEFAULT_DB_PORT, DEFAULT_USER_PASSWORD} from './command.constant.ts';
+import {DefaultUserService, UserModel, UserService} from '../../shared/modules/user/index.ts';
+import {DefaultOfferService, OfferModel, OfferService} from '../../shared/modules/offer/index.ts';
+import {DatabaseClient, MongoDatabaseClient} from '../../shared/libs/database-client/index.ts';
+import {ConsoleLogger, Logger} from '../../shared/libs/logger/index.ts';
+import {Offer} from '../../shared/types/index.ts';
 
 export class ImportCommand implements Command {
   private userService: UserService;

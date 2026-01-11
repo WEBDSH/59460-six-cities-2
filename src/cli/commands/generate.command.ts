@@ -1,10 +1,10 @@
-import { Command } from './command.interface.js';
+import { Command } from './command.interface.ts';
 import axios from 'axios';
-import {MockServerData} from '../../shared/types/index.js';
-import {TSVOfferGenerator} from '../../shared/libs/offeer-generator/index.js';
-import {TSVFileWriter} from '../../shared/libs/file-writer/index.js';
+import {MockServerData} from '../../shared/types/index.ts';
+import {TSVOfferGenerator} from '../../shared/libs/offeer-generator/index.ts';
+import {TSVFileWriter} from '../../shared/libs/file-writer/index.ts';
 import chalk from 'chalk';
-import {getErrorMessage} from '../../shared/helpers/index.js';
+import {getErrorMessage} from '../../shared/helpers/index.ts';
 
 
 export class GenerateCommand implements Command {
@@ -41,7 +41,7 @@ export class GenerateCommand implements Command {
     try {
       await this.load(url);
       await this.write(filepath, offerCount);
-      console.info(chalk.bgGreen(`File ${filepath} was created!`));
+      console.info(chalk.green(`File ${filepath} was created!`));
     } catch (error: unknown) {
       console.error('Can\'t generate data');
       getErrorMessage(error);

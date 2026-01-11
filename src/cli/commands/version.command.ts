@@ -1,4 +1,4 @@
-import type { Command } from './command.interface.js';
+import type { Command } from './command.interface.ts';
 import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import chalk from 'chalk';
