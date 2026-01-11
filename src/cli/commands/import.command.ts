@@ -12,7 +12,7 @@ export class ImportCommand implements Command {
   private userService: UserService;
   private offerService: OfferService;
   private databaseClient: DatabaseClient;
-  private logger: Logger;
+  private readonly logger: Logger;
   private salt: string;
 
   constructor() {

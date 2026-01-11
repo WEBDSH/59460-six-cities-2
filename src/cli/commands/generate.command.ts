@@ -4,6 +4,7 @@ import {MockServerData} from '../../shared/types/index.js';
 import {TSVOfferGenerator} from '../../shared/libs/offeer-generator/index.js';
 import {TSVFileWriter} from '../../shared/libs/file-writer/index.js';
 import chalk from 'chalk';
+import {getErrorMessage} from '../../shared/helpers/index.js';
 
 
 export class GenerateCommand implements Command {
@@ -43,10 +44,7 @@ export class GenerateCommand implements Command {
       console.info(chalk.bgGreen(`File ${filepath} was created!`));
     } catch (error: unknown) {
       console.error('Can\'t generate data');
-
-      if (error instanceof Error) {
-        console.error(error.message);
-      }
+      getErrorMessage(error);
     }
   }
 }
